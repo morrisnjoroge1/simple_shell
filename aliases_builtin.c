@@ -126,8 +126,8 @@ alias_string = malloc(sizeof(char) * length);
 if (!alias_string)
 {
 return;
-} 
-end_ptr = alias_string; 
+}
+end_ptr = alias_string;
 
 end_ptr = _strcpy(end_ptr, alias->name);
 end_ptr = _strcpy(end_ptr, "='");

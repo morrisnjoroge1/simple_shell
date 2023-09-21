@@ -44,7 +44,7 @@ while (getline(&line, &line_size, fp) != -1)
 {
 
 int exter_ret = 0;/*integer value*/
-int result = sscanf(line, "%d",&exter_ret);
+int result = sscanf(line, "%d", &exter_ret);
 
 if (result != 1)
 {

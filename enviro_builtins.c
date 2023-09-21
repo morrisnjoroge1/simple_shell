@@ -11,9 +11,9 @@ char **_getenv(char *var);
 * _env - function that prints the current enviroment
 * @args: array of arguments
 * @front: double pointer to args
-*
 * Return: -1 error, otherwise 0;
 */
+
 int _env(char **args, char __attribute__((__unused__)) **front)
 {
 int index = 0;
@@ -88,7 +88,7 @@ new_env[new_env_index] = environ[new_env_index];
 new_env_index++;
 }
 new_env[new_env_index] = new_val;
-new_env[new_env_index +1] = NULL;
+new_env[new_env_index + 1] = NULL;
 free(environ);
 environ = new_env;
 return (0);

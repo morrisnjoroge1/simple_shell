@@ -145,7 +145,7 @@ write(STDERR_FILENO, "Command not found\n", _strlen("Command not found\n"));
 }
 }
 
-return 0;
+return (0);
 }
 
 /**
@@ -153,12 +153,12 @@ return 0;
 * @args: array of arguments.
 * @front: pointer arguments
 * Return: help
-* */
+**/
 
 int _help_adapter(char **args, char **front)
 {
-    const char **const_args = (const char **)args;
-    return _help(const_args, front);
+const char **const_args = (const char **)args;
+return (_help(const_args, front));
 }
 
 
