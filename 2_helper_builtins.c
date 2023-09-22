@@ -6,10 +6,10 @@ void x_help_unsetenv(void);
 void x_help_history(void);
 
 /**
- * help_env - shows information on the shellby builtin command 'env'.
+ * x_help_env - shows information on the shellby builtin command 'env'.
  * Return: void
  */
-void help_env(void)
+void x_help_env(void)
 {
 	char *msg = "env: env\n\tPrints the current environment.\n";
 

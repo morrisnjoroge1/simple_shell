@@ -99,5 +99,3 @@ void x_help_help(void)
 	msg = "builtin command.\n";
 	write(STDOUT_FILENO, msg, _strlen(msg));
 }
-
-

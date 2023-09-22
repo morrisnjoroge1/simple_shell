@@ -187,6 +187,3 @@ else if (prev == '|' && next != ' ')
 (*new_len)++;
 }
 }
-
-
-
