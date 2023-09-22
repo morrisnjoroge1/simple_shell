@@ -12,7 +12,7 @@
  */
 int _my_env(info_t *infor)
 {
-	print_list_str(infor->env);
+	print_list_ptr(infor->env);
 	return (0);
 }
 
@@ -39,11 +39,11 @@ char *_getenv(info_t *infor, const char *name)
 }
 
 /**
- *_my_setenv - Creating function like _setenv that set environmental vars
+ *my_setenv - Creating function like _setenv that set environmental vars
  *@infor: pointer to structure info_t
  *Return: 0 always on success
  */
-int _my_setenv(info_t *infor)
+int my_setenv(info_t *infor)
 {
 	if (infor->argc != 3)
 	{
@@ -57,11 +57,11 @@ int _my_setenv(info_t *infor)
 
 
 /**
- *_my_unsetenv - Creating a function that unset set environmental vars
+ *my_unsetenv - Creating a function that unset set environmental vars
  *@infor: pointer to structure info_t
  *Return: 0
  */
-int _my_unsetenv(info_t *infor)
+int my_unsetenv(info_t *infor)
 {
 	int a;
 
