@@ -10,6 +10,7 @@
 ssize_t read_buf(info_t *infor, char *buf, size_t *a)
 {
 	ssize_t b = 0;
+
 	if (*a)
 		return (0);
 	b = read(infor->readfd, buf, READ_BUF_SIZE);
