@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- *is_interactive - Function that checks the interactiveness of the program
+ *x_interactive - Function that checks the interactiveness of the program
  *@infor: pointer to structure infor_t
  *Return: 1 upon success or 0 upon failure
  */
-int is_interactive(info_t *infor)
+int x_interactive(info_t *infor)
 {
 	return (isatty(STDIN_FILENO) && infor->readfd <= 2);
 }
@@ -39,12 +39,12 @@ int _isalpha(int c)
 }
 
 /**
- *_my_history - prints the history of shell
+ *my_history - prints the history of shell
  *@infor: pointer to structure info_t
  *Return: 0 always
  */
-int _my_history(info_t *infor)
+int my_history(info_t *infor)
 {
-	print_listy(infor->history);
+	prints_list(infor->history);
 	return (0);
 }

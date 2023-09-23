@@ -30,7 +30,7 @@ char **list_to_string(list_t *head)
 	char **stars;
 	char *ptr;
 
-	if (!head || !i)
+	if (!head || !a)
 		return (NULL);
 	stars = malloc(sizeof(char *) * (a + 1));
 	if (!stars)
@@ -47,7 +47,7 @@ char **list_to_string(list_t *head)
 		}
 
 		ptr = _strcpy(ptr, node->ptr);
-		stars[i] = ptr;
+		stars[a] = ptr;
 	}
 	stars[a] = NULL;
 	return (stars);

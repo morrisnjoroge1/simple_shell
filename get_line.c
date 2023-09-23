@@ -1,9 +1,5 @@
 #include "shell.h"
 
-
-
-
-
 /**
  *input_buf - Gets the chained input buffer
  *@infor: pointer to structure info_t
@@ -87,25 +83,5 @@ ssize_t get_input(info_t *infor)
 	}
 
 	*buf_pp = buf;
-	return (b);
-}
-
-
-/**
- *read_buf - Function that reads the buffer[1024]
- *@infor: pointr to structure info_t
- *@buf: pointer to character buffer
- *@a: pointer to integer
- *Return: b
- */
-ssize_t read_buf(info_t *infor, char *buf, size_t *a)
-{
-	ssize_t b = 0;
-
-	if (*a)
-		return (0);
-	b = read(infor->readfd, buf, READ_BUF_SIZE);
-	if (b >= 0)
-		*a = b;
 	return (b);
 }

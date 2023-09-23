@@ -196,7 +196,7 @@ void free_list(list_t **);
 
 size_t list_len(const list_t *);
 char **list_to_string(list_t *);
-size_t print_list(const list_t *);
+size_t prints_list(const list_t *);
 list_t *node_start_with(list_t *, char *, char);
 ssize_t get_node_index(list_t *, list_t *);
 

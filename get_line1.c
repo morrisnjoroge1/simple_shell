@@ -1,6 +1,24 @@
 #include "shell.h"
 
 /**
+ *read_buf - Function that reads the buffer[1024]
+ *@infor: pointr to structure info_t
+ *@buf: pointer to character buffer
+ *@a: pointer to integer
+ *Return: b
+ */
+ssize_t read_buf(info_t *infor, char *buf, size_t *a)
+{
+	ssize_t b = 0;
+	if (*a)
+		return (0);
+	b = read(infor->readfd, buf, READ_BUF_SIZE);
+	if (b >= 0)
+		*a = b;
+	return (b);
+}
+
+/**
  *_getline - Function that gets the next line of user input in stdinput
  *@infor: pointer to structure info_t
  *@str: pointer to character string
@@ -23,7 +41,7 @@ int _getline(info_t *infor, char **str, size_t *length)
 	r = read_buf(infor, buf, &len);
 	if (r == -1 || (r == 0 && len == 0))
 		return (-1);
-	c = _strchr(buf + i, '\n');
+	c = _strchr(buf + a, '\n');
 	b = c ? 1 + (unsigned int)(c - buf) : len;
 	new_pp = _realloc(pp, s, s ? s + b : b + 1);
 	if (!new_pp)

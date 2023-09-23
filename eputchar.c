@@ -54,7 +54,7 @@ int _putfd(char c, int pd)
 
 	if (c == BUF_FLUSH || a >= WRITE_BUF_SIZE)
 	{
-		write(fd, buf, a);
+		write(pd, buf, a);
 		a = 0;
 	}
 	if (c != BUF_FLUSH)

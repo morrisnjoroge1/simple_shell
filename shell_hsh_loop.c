@@ -22,14 +22,14 @@ int hsh(info_t *infor, char **av)
 		{
 			set_info(infor, av);
 			builtin_rec = find_builtin(infor);
-			if (builtin_ret == -1)
+			if (builtin_rec == -1)
 				find_cmd(infor);
 		}
 		else if (x_interactive(infor))
 			_putchar('\n');
 		free_info(infor, 0);
 	}
-	hist_writey(infor);
+	hist_write(infor);
 	free_info(infor, 1);
 	if (!x_interactive(infor) && infor->status)
 		exit(infor->status);
@@ -56,8 +56,8 @@ int find_builtin(info_t *infor)
 		{"env", my_env},
 		{"help", my_help},
 		{"history", my_history},
-		{"setenv", _my_setenv},
-		{"unsetenv", _my_unsetenv},
+		{"setenv", my_setenv},
+		{"unsetenv", my_unsetenv},
 		{"cd", my_cd},
 		{"alias", my_alias},
 		{NULL, NULL}
@@ -91,7 +91,7 @@ void find_cmd(info_t *infor)
 		infor->line_count_flag = 0;
 	}
 	for (a = 0, k = 0; infor->arg[a]; a++)
-		if (!is_delim(infor->arg[i], " \t\n"))
+		if (!is_delim(infor->arg[a], " \t\n"))
 			k++;
 	if (!k)
 		return;

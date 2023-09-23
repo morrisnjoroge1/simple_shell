@@ -61,7 +61,7 @@ int hist_read(info_t *infor)
 			build_history_list(infor, buf + last, line_count++);
 			last = a + 1;
 		}
-	if (last != i)
+	if (last != a)
 		build_history_list(infor, buf + last, line_count++);
 	free(buf);
 	infor->histcount = line_count;
@@ -92,7 +92,7 @@ int hist_write(info_t *infor)
 		return (-1);
 	for (node = infor->history; node; node = node->next)
 	{
-		_putsfd(node->ptr, fd);
+		_putsfd(node->ptr, pd);
 		_putfd('\n', pd);
 	}
 	_putfd(BUF_FLUSH, pd);
@@ -137,5 +137,5 @@ int hist_renumber(info_t *infor)
 		node->num = a++;
 		node = node->next;
 	}
-	return (infor->histcount = i);
+	return (infor->histcount = a);
 }

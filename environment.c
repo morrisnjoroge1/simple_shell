@@ -5,12 +5,12 @@
 /*unsetiing the env vars*/
 
 /**
- *_my_env - prints out the current environment
+ *my_env - prints out the current environment
  *@infor: pointr to structure info_t
  *Return: 0 on success
  *
  */
-int _my_env(info_t *infor)
+int my_env(info_t *infor)
 {
 	print_list_ptr(infor->env);
 	return (0);
@@ -30,7 +30,7 @@ char *_getenv(info_t *infor, const char *name)
 
 	while (node)
 	{
-		p = starts_with(node->ptr, name);
+		p = start_with(node->ptr, name);
 		if (p && *p)
 			return (p);
 		node = node->next;

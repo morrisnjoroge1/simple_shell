@@ -15,7 +15,7 @@ int my_exit(info_t *infor)
 
 	if (infor->argv[1])
 	{
-		exitchecks = _erratoi(infor->argv[1]);
+		exitchecks = _erritoa(infor->argv[1]);
 		if (exitchecks == -1)
 		{
 			infor->status = 2;

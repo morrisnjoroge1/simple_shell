@@ -10,11 +10,11 @@ void prints_error(info_t *infor, char *pstr)
 {
 	_eputs(infor->fname);
 	_eputs(": ");
-	print_d(infor->line_count, STDERR_FILENO);
+	print_decimal(infor->_line_count, STDERR_FILENO);
 	_eputs(": ");
 	_eputs(infor->argv[0]);
 	_eputs(": ");
-	_eputs(estr);
+	_eputs(pstr);
 }
 
 
@@ -46,9 +46,9 @@ int print_decimal(int input, int pd)
 		if (_abs_ / a)
 		{
 			__putchar('0' + current / a);
-			count++;
+			counter++;
 		}
-		current %= i;
+		current %= a;
 	}
 	__putchar('0' + current);
 	counter++;

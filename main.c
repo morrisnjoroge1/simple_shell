@@ -38,6 +38,6 @@ int main(int ac, char **av)
 	}
 	populate_env_list(infor);
 	hist_read(infor);
-	hsh(info, av);
+	hsh(infor, av);
 	return (EXIT_SUCCESS);
 }
